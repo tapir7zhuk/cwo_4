@@ -1,0 +1,420 @@
+﻿<Window x:Class="DrugStoreStatistics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DrugStoreStatistics"
+        xmlns:converters="clr-namespace:DrugStoreStatistics.Converters"
+        Title="Аптека" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <converters:NoImageVisConverter x:Key="NoImageVisConverter"/>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="0,2,0,6"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="0,4,0,0"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="RowHeight" Value="30"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+
+        <!-- ===== СТРІЧКА ЗВЕРХУ ===== -->
+        <Border DockPanel.Dock="Top" Background="#1976D2" Padding="16,10">
+            <DockPanel>
+                <TextBlock Text="💊 Облік ліків в аптеці"
+                           Foreground="White" FontSize="18" FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+            </DockPanel>
+        </Border>
+
+        <!-- ===== ТАБИ ===== -->
+        <TabControl SelectedIndex="{Binding SelectedTabIndex}">
+
+            <!-- ================= ВКЛАДКА 1: СПИСКИ ================= -->
+            <TabItem Header="Списки" DataContext="{Binding Lists}">
+                <TabControl>
+
+                    <!-- Підвкладка: Ліки -->
+                    <TabItem Header="Ліки">
+                        <Grid Margin="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="310"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Таблиця ліків -->
+                            <DataGrid Grid.Column="0" Margin="0,0,8,0"
+                                      ItemsSource="{Binding Medicines}"
+                                      SelectedItem="{Binding SelectedMedicine}"
+                                      AutoGenerateColumns="False"
+                                      IsReadOnly="True"
+                                      SelectionMode="Single"
+                                      AlternatingRowBackground="#F5F5F5">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding Id}" Width="40"/>
+                                    <DataGridTextColumn Header="Назва"
+                                        Binding="{Binding Name}" Width="160"/>
+                                    <DataGridTextColumn Header="Категорія"
+                                        Binding="{Binding Category.Name}" Width="110"/>
+                                    <DataGridTextColumn Header="Ціна"
+                                        Binding="{Binding Price, StringFormat=N2}" Width="80"/>
+                                    <DataGridTextColumn Header="К-сть"
+                                        Binding="{Binding Quantity}" Width="55"/>
+                                    <DataGridTextColumn Header="Продано"
+                                        Binding="{Binding SoldQuantity}" Width="65"/>
+                                    <DataGridTextColumn Header="Придатний до"
+                                        Binding="{Binding ExpirationDate, StringFormat=dd.MM.yyyy}"
+                                        Width="105"/>
+                                    <DataGridTextColumn Header="Шкаф"
+                                        Binding="{Binding CabinetNumber}" Width="55"/>
+                                    <DataGridTextColumn Header="Полиця"
+                                        Binding="{Binding ShelfNumber}" Width="60"/>
+                                    <DataGridTextColumn Header="Виробник"
+                                        Binding="{Binding Manufacturer}" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <!-- Форма редагування ліків -->
+                            <Border Grid.Column="1" BorderBrush="#DDDDDD"
+                                    BorderThickness="1" CornerRadius="4" Padding="12">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <StackPanel>
+                                        <TextBlock FontSize="13" FontWeight="Bold"
+                                                   Margin="0,0,0,10">
+                                            <TextBlock Text="Редагування ліків"
+                                                   FontSize="13" FontWeight="Bold"
+                                                   Margin="0,0,0,10"/>
+                                        </TextBlock>
+
+                                        <Label Content="Назва *"/>
+                                        <TextBox Text="{Binding MedicineName,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Виробник"/>
+                                        <TextBox Text="{Binding MedicineManufacturer,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Ціна (грн) *"/>
+                                        <TextBox Text="{Binding MedicinePriceText,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Загальна кількість *"/>
+                                        <TextBox Text="{Binding MedicineQuantityText,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Кількість проданих *"/>
+                                        <TextBox Text="{Binding MedicineSoldQuantityText,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Термін придатності *"/>
+                                        <DatePicker
+                                            SelectedDate="{Binding MedicineExpirationDate}"
+                                            Margin="0,2,0,6"/>
+
+                                        <Label Content="Номер шкафу *"/>
+                                        <TextBox Text="{Binding MedicineCabinetText,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Номер полички *"/>
+                                        <TextBox Text="{Binding MedicineShelfText,
+                                            UpdateSourceTrigger=PropertyChanged}"/>
+
+                                        <Label Content="Посилання на фото"/>
+                                        <TextBox Text="{Binding MedicineImageUrl,
+                                            UpdateSourceTrigger=PropertyChanged}"
+                                                 TextWrapping="Wrap" Height="50"
+                                                 AcceptsReturn="False"/>
+
+                                        <Label Content="Категорія *"/>
+                                        <ComboBox ItemsSource="{Binding Categories}"
+                                                  SelectedItem="{Binding MedicineSelectedCategory}"
+                                                  DisplayMemberPath="Name"
+                                                  Margin="0,2,0,12"/>
+
+                                        <WrapPanel HorizontalAlignment="Center">
+                                            <Button Content="Зберегти"
+                                                Command="{Binding SaveMedicineCommand}"
+                                                Background="#4CAF50" Foreground="White"/>
+                                            <Button Content="Видалити"
+                                                Command="{Binding DeleteMedicineCommand}"
+                                                Background="#F44336" Foreground="White"/>
+                                            <Button Content="Очистити"
+                                                Command="{Binding ClearMedicineFormCommand}"/>
+                                        </WrapPanel>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Border>
+                        </Grid>
+                    </TabItem>
+
+                    <!-- Підвкладка: Категорії -->
+                    <TabItem Header="Категорії">
+                        <Grid Margin="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="280"/>
+                            </Grid.ColumnDefinitions>
+
+                            <DataGrid Grid.Column="0" Margin="0,0,8,0"
+                                      ItemsSource="{Binding Categories}"
+                                      SelectedItem="{Binding SelectedCategory}"
+                                      AutoGenerateColumns="False"
+                                      IsReadOnly="True"
+                                      SelectionMode="Single"
+                                      AlternatingRowBackground="#F5F5F5">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding Id}" Width="50"/>
+                                    <DataGridTextColumn Header="Назва"
+                                        Binding="{Binding Name}" Width="200"/>
+                                    <DataGridTextColumn Header="Опис"
+                                        Binding="{Binding Description}" Width="*"/>
+                                    <DataGridTextColumn Header="К-сть ліків"
+                                        Binding="{Binding Medicines.Count}" Width="90"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                            <Border Grid.Column="1" BorderBrush="#DDDDDD"
+                                    BorderThickness="1" CornerRadius="4" Padding="12">
+                                <StackPanel>
+                                    <TextBlock Text="Редагування категорії"
+                                               FontSize="13" FontWeight="Bold"
+                                               Margin="0,0,0,10"/>
+
+                                    <Label Content="Назва *"/>
+                                    <TextBox Text="{Binding CategoryName,
+                                        UpdateSourceTrigger=PropertyChanged}"/>
+
+                                    <Label Content="Опис"/>
+                                    <TextBox Text="{Binding CategoryDescription,
+                                        UpdateSourceTrigger=PropertyChanged}"
+                                             Height="80" AcceptsReturn="True"
+                                             TextWrapping="Wrap"/>
+
+                                    <WrapPanel HorizontalAlignment="Center"
+                                               Margin="0,12,0,0">
+                                        <Button Content="Зберегти"
+                                            Command="{Binding SaveCategoryCommand}"
+                                            Background="#4CAF50" Foreground="White"/>
+                                        <Button Content="Видалити"
+                                            Command="{Binding DeleteCategoryCommand}"
+                                            Background="#F44336" Foreground="White"/>
+                                        <Button Content="Очистити"
+                                            Command="{Binding ClearCategoryFormCommand}"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+
+            <!-- ================= ВКЛАДКА 2: СТАТИСТИКА ================= -->
+            <TabItem Header="Статистика" DataContext="{Binding Statistics}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="12">
+                    <StackPanel>
+
+                        <TextBlock Text="Ліки, термін придатності яких менше тижня"
+                                   FontSize="14" FontWeight="Bold"
+                                   Foreground="#C62828" Margin="0,0,0,6"/>
+                        <DataGrid ItemsSource="{Binding ExpiringSoon}"
+                                  AutoGenerateColumns="False" IsReadOnly="True"
+                                  MaxHeight="180" Margin="0,0,0,16"
+                                  AlternatingRowBackground="#FFF9C4">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Назва"
+                                    Binding="{Binding Name}" Width="180"/>
+                                <DataGridTextColumn Header="Категорія"
+                                    Binding="{Binding Category.Name}" Width="130"/>
+                                <DataGridTextColumn Header="Придатний до"
+                                    Binding="{Binding ExpirationDate, StringFormat=dd.MM.yyyy}"
+                                    Width="120"/>
+                                <DataGridTextColumn Header="К-сть"
+                                    Binding="{Binding Quantity}" Width="60"/>
+                                <DataGridTextColumn Header="Шкаф/Полиця"
+                                    Binding="{Binding CabinetShelfDisplay}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <TextBlock Text="Категорія з найбільшою загальною вартістю"
+                                   FontSize="14" FontWeight="Bold"
+                                   Foreground="#1565C0" Margin="0,0,0,6"/>
+                        <Border Background="#E3F2FD" CornerRadius="6"
+                                Padding="12" Margin="0,0,0,16">
+                            <TextBlock Text="{Binding TopCategoryDisplay}"
+                                       FontSize="13" TextWrapping="Wrap"/>
+                        </Border>
+
+                        <TextBlock Text="5 найдорожчих ліків"
+                                   FontSize="14" FontWeight="Bold"
+                                   Foreground="#2E7D32" Margin="0,0,0,6"/>
+                        <DataGrid ItemsSource="{Binding Top5Expensive}"
+                                  AutoGenerateColumns="False" IsReadOnly="True"
+                                  MaxHeight="180" Margin="0,0,0,16"
+                                  AlternatingRowBackground="#E8F5E9">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Назва"
+                                    Binding="{Binding Name}" Width="200"/>
+                                <DataGridTextColumn Header="Категорія"
+                                    Binding="{Binding Category.Name}" Width="140"/>
+                                <DataGridTextColumn Header="Ціна (грн)"
+                                    Binding="{Binding Price, StringFormat=N2}" Width="100"/>
+                                <DataGridTextColumn Header="Виробник"
+                                    Binding="{Binding Manufacturer}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <TextBlock Text="5 найдешевших ліків"
+                                   FontSize="14" FontWeight="Bold"
+                                   Foreground="#6A1B9A" Margin="0,0,0,6"/>
+                        <DataGrid ItemsSource="{Binding Top5Cheapest}"
+                                  AutoGenerateColumns="False" IsReadOnly="True"
+                                  MaxHeight="180" AlternatingRowBackground="#F3E5F5">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Назва"
+                                    Binding="{Binding Name}" Width="200"/>
+                                <DataGridTextColumn Header="Категорія"
+                                    Binding="{Binding Category.Name}" Width="140"/>
+                                <DataGridTextColumn Header="Ціна (грн)"
+                                    Binding="{Binding Price, StringFormat=N2}" Width="100"/>
+                                <DataGridTextColumn Header="Виробник"
+                                    Binding="{Binding Manufacturer}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- ================= ВКЛАДКА 3: ТОП ПРОДАВАНИХ ================= -->
+            <TabItem Header="Топ продаваних" DataContext="{Binding TopSelling}">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="260"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Регулятор кількості -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal"
+                                VerticalAlignment="Center" Margin="0,0,0,10">
+                        <TextBlock Text="Показати топ:" VerticalAlignment="Center"
+                                   FontWeight="SemiBold" Margin="0,0,8,0"/>
+                        <TextBox Text="{Binding TopCount, UpdateSourceTrigger=PropertyChanged}"
+                                 Width="50" Padding="4" VerticalAlignment="Center"/>
+                        <TextBlock Text="позицій" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                    </StackPanel>
+
+                    <!-- Ярус 1: Фото + список для вибору -->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="240"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Фото -->
+                        <Border Grid.Column="0" CornerRadius="6" Margin="0,0,12,0"
+                                Background="#EEEEEE" ClipToBounds="True">
+                            <Grid>
+                                <!-- Індикатор завантаження -->
+                                <TextBlock Text="Завантаження..."
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="#999999"
+                                           Visibility="{Binding IsLoadingImage,
+                                               Converter={StaticResource BoolToVis}}"/>
+                                <!-- Заглушка коли немає фото -->
+                                <TextBlock Text="Фото відсутнє"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="#BBBBBB"
+                                           FontSize="13">
+                                    <TextBlock.Visibility>
+                                        <MultiBinding Converter="{StaticResource NoImageVisConverter}">
+                                            <Binding Path="CurrentImage"/>
+                                            <Binding Path="IsLoadingImage"/>
+                                        </MultiBinding>
+                                    </TextBlock.Visibility>
+                                </TextBlock>
+                                <Image Source="{Binding CurrentImage}" Stretch="Uniform"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Список для вибору препарату -->
+                        <ListBox Grid.Column="1"
+                                 ItemsSource="{Binding TopMedicines}"
+                                 SelectedItem="{Binding SelectedMedicine}"
+                                 BorderBrush="#DDDDDD" BorderThickness="1">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="4">
+                                        <TextBlock Text="{Binding Name}"
+                                                   FontWeight="SemiBold" FontSize="13"/>
+                                        <TextBlock Foreground="#666666" FontSize="11">
+                                            <Run Text="{Binding Category.Name}"/>
+                                            <Run Text=" | "/>
+                                            <Run Text="{Binding Price, StringFormat=N2}"/>
+                                            <Run Text=" грн"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                    <!-- Ярус 2: Таблиця -->
+                    <DataGrid Grid.Row="2" Margin="0,12,0,0"
+                              ItemsSource="{Binding TopMedicines}"
+                              SelectedItem="{Binding SelectedMedicine}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              SelectionMode="Single"
+                              AlternatingRowBackground="#F5F5F5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Назва"
+                                Binding="{Binding Name}" Width="200"/>
+                            <DataGridTextColumn Header="Категорія"
+                                Binding="{Binding Category.Name}" Width="130"/>
+                            <DataGridTextColumn Header="Ціна (грн)"
+                                Binding="{Binding Price, StringFormat=N2}" Width="100"/>
+                            <DataGridTextColumn Header="Загальна к-сть"
+                                Binding="{Binding Quantity}" Width="120"/>
+                            <!-- Кількість проданих — виділено кольором -->
+                            <DataGridTemplateColumn Header="Продано" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#E8F5E9" CornerRadius="3"
+                                                Padding="6,2">
+                                            <TextBlock Text="{Binding SoldQuantity}"
+                                                       Foreground="#2E7D32"
+                                                       FontWeight="Bold"
+                                                       HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </DockPanel>
+</Window>
