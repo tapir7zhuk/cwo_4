@@ -31,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{F7A706A4-9876-4EF6-9C7C-E541A7104083}|DrugStoreStatistics.csproj|solutionrelative:viewmodels\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7A706A4-9876-4EF6-9C7C-E541A7104083}|DrugStoreStatistics.csproj|d:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\drugstorestatistics\\viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7A706A4-9876-4EF6-9C7C-E541A7104083}|DrugStoreStatistics.csproj|solutionrelative:viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F7A706A4-9876-4EF6-9C7C-E541A7104083}|DrugStoreStatistics.csproj|d:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\drugstorestatistics\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7A706A4-9876-4EF6-9C7C-E541A7104083}|DrugStoreStatistics.csproj|solutionrelative:viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,36 +78,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 231,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "ViewModels\\RelayCommand.cs",
-              "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\RelayCommand.cs",
-              "RelativeToolTip": "ViewModels\\RelayCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T02:30:25.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StatisticsViewModel.cs",
-              "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\StatisticsViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\StatisticsViewModel.cs",
-              "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\StatisticsViewModel.cs",
-              "RelativeToolTip": "ViewModels\\StatisticsViewModel.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAYwD8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T02:32:15.912Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -123,7 +91,21 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAcwBkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T03:03:02.107Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StatisticsViewModel.cs",
+              "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\StatisticsViewModel.cs",
+              "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\StatisticsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\StatisticsViewModel.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T02:32:15.912Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -134,8 +116,12 @@
               "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-25T02:35:32.481Z",
+              "WhenOpened": "2026-04-12T01:43:46.578Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Bookmark",
@@ -192,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "BaseViewModel.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\ViewModels\\BaseViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\BaseViewModel.cs",
@@ -204,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "NullToStringConverter.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Converters\\NullToStringConverter.cs",
               "RelativeDocumentMoniker": "Converters\\NullToStringConverter.cs",
@@ -216,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "Services\\CategoryService.cs",
@@ -228,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "MedicineService.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Services\\MedicineService.cs",
               "RelativeDocumentMoniker": "Services\\MedicineService.cs",
@@ -240,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "NoImageVisConverter.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Converters\\NoImageVisConverter.cs",
               "RelativeDocumentMoniker": "Converters\\NoImageVisConverter.cs",
@@ -252,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -264,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -276,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Medicine.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Models\\Medicine.cs",
               "RelativeDocumentMoniker": "Models\\Medicine.cs",
@@ -288,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Category.cs",
@@ -300,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",

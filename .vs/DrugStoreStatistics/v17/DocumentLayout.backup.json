@@ -82,15 +82,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 231,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -135,11 +131,15 @@
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "ToolTip": "D:\\\u0441\u0435\u043C\u0435\u0441\u0442\u0440 7 2025\\\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u0443\u0432\u0430\u043D\u043D\u044F\\00\\DrugStoreStatistics\\MainWindow.xaml*",
+              "RelativeToolTip": "MainWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-25T02:35:32.481Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
